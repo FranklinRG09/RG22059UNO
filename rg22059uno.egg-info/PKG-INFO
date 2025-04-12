@@ -1,3 +1,16 @@
+Metadata-Version: 2.4
+Name: rg22059uno
+Version: 0.1.0
+Summary: Librería para resolver sistemas de ecuaciones lineales y no lineales
+Author-email: RG22059 <rg22059@ues.edu.sv>
+License: MIT
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
 # Corto #1 -- Publicación de librería en PyPI
 
 ## Descripción:

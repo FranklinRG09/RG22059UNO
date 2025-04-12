@@ -1,4 +1,4 @@
-def gauss_jordan(matrix, vector):
+def gaussJordan(matrix, vector):
     n = len(matrix)
     # Matriz aumentada
     aug = [row + [val] for row, val in zip(matrix, vector)]
@@ -29,20 +29,3 @@ def gauss_jordan(matrix, vector):
     # Extraer soluciones
     solution = [aug[i][-1] for i in range(n)]
     return solution
-
-
-# Ejemplo
-A = [
-    [2, -1, 1],
-    [1, 2, -1],
-    [3, -1, 4]]
-b = [5, 3, 10]
-
-resultado = gauss_jordan(A, b)
-
-# Mostrar resultados
-if isinstance(resultado, list):
-    for i, val in enumerate(resultado):
-        print(f"x{i + 1}: {val}")
-else:
-    print(resultado)

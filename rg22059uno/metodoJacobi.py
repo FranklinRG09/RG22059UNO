@@ -1,4 +1,4 @@
-def metodo_jacobi(A, b, tolerancia=1e-10, max_iter=100):
+def jacobi(A, b, tolerancia=1e-10, max_iter=1000):
     n = len(A)
     x = [0.0 for _ in range(n)]  # Aproximación inicial (vector nulo)
     x_anterior = x.copy()
@@ -19,23 +19,3 @@ def metodo_jacobi(A, b, tolerancia=1e-10, max_iter=100):
         x_anterior = x.copy()
 
     return "El método de Jacobi no converge tras {} iteraciones.".format(max_iter)
-
-# -----------------------------
-# Ejemplo de uso
-
-A = [
-    [4, -2, 1],
-    [2, 3, 2],
-    [1, -1, 4]
-]
-
-b = [10, 12, 5]
-
-resultado = metodo_jacobi(A, b)
-
-# Mostrar resultados
-if isinstance(resultado, list):
-    for i, val in enumerate(resultado):
-        print(f"x{i+1}: {val}")
-else:
-    print(resultado)

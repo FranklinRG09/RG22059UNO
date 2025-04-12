@@ -56,21 +56,3 @@ def cramer(A, b):
         soluciones.append(det_Ai / det_A)
 
     return soluciones
-
-# Ejemplo de uso
-A = [
-    [1, 1, 1],
-    [2, -1, 2],
-    [3, 2, 3]
-]
-
-b = [6, 7, 12]
-
-resultado = cramer(A, b)
-
-# Mostrar resultados
-if isinstance(resultado, list):
-    for i, x in enumerate(resultado):
-        print(f"x{i+1}: {x}")
-else:
-    print(resultado)

@@ -1,4 +1,4 @@
-def descomposicion_lu(A):
+def LU(A):
     n = len(A)
     L = [[0.0]*n for _ in range(n)]
     U = [[0.0]*n for _ in range(n)]
@@ -43,30 +43,11 @@ def sustitucion_atras(U, y):
     return x
 
 # Función principal que resuelve Ax = b usando LU
-def resolver_lu(A, b):
-    L, U = descomposicion_lu(A)
+def descomposicionLU(A, b):
+    L, U = LU(A)
     if L is None or U is None:
         return "El sistema no se puede resolver con descomposición LU (división por cero o matriz singular)."
 
     y = sustitucion_adelante(L, b)
     x = sustitucion_atras(U, y)
     return x
-
-# -----------------------------
-# Ejemplo de uso
-
-A = [
-    [4, -2, 1],
-    [1, 3, -2],
-    [2, -1, 4]
-]
-
-b = [7, 5, 10 ]
-
-resultado = resolver_lu(A, b)
-
-if isinstance(resultado, list):
-    for i, val in enumerate(resultado):
-        print(f"x{i+1}: {val}")
-else:
-    print(resultado)

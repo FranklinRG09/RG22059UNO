@@ -1,4 +1,4 @@
-def gauss_elimination(matrix, vector):
+def gauss(matrix, vector):
     n = len(matrix)
 
     # Construir matriz aumentada
@@ -28,22 +28,3 @@ def gauss_elimination(matrix, vector):
         solution[i] = (aug_matrix[i][n] - sum_ax) / aug_matrix[i][i]
 
     return solution
-
-
-# Ejemplo de uso
-A = [
-    [2, 1, -1],
-    [-3, -1, 2],
-    [-2, 1, 2]
-]
-
-b = [8, -11, -3]
-
-resultado = gauss_elimination(A, b)
-
-# Mostrar resultado con nombres de variables
-if isinstance(resultado, list):
-    for i, val in enumerate(resultado):
-        print(f"x{i + 1}: {val}")
-else:
-    print(resultado)
